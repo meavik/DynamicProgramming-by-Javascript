@@ -5,7 +5,7 @@ If there is multiple combinations possible, you may return any single one.*/
 //bruteforce approach
 // const howSum = (targetSum, numbers)=>{
 //     if (targetSum === 0) return [];
-//     if (targetSum<=0) return null;
+//     if (targetSum<0) return null;
 //     for (let num of numbers){
 //         const remainder = targetSum - num;
 //         const remainderResult =  howSum(remainder,numbers);
@@ -20,7 +20,7 @@ If there is multiple combinations possible, you may return any single one.*/
 const howSum = (targetSum, numbers, memo = {}) => {
     if (targetSum in memo) return memo[targetSum];
     if (targetSum === 0) return [];
-    if (targetSum <= 0) return null;
+    if (targetSum < 0) return null;
     for (let num of numbers) {
         const remainder = targetSum - num;
         const remainderResult = howSum(remainder, numbers, memo);
