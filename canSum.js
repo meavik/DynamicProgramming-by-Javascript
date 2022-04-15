@@ -6,7 +6,7 @@ You may assume that all input numbers are non-negative.*/
 //bruteforce approach
 // const canSum = (targetSum,numbers)=>{
 //     if (targetSum === 0) return true;
-//     if(targetSum<=0) return false;
+//     if(targetSum<0) return false;
 //     for(let num of numbers){
 //         const remainder = targetSum - num;
 //         if(canSum(remainder,numbers) === true){
@@ -20,7 +20,7 @@ You may assume that all input numbers are non-negative.*/
 const canSum = (targetSum,numbers,memo = {})=>{
     if(targetSum in memo) return memo[targetSum];
     if(targetSum === 0) return true;
-    if (targetSum<=0) return false;
+    if (targetSum<0) return false;
     for( let num of numbers){
         const remainder = targetSum - num;
         if(canSum(remainder,numbers,memo) === true){
